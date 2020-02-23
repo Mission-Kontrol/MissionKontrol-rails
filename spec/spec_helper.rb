@@ -1,6 +1,5 @@
 require "bundler/setup"
 require "mission_kontrol_relay"
-require 'rspec/rails'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
