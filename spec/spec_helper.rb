@@ -1,4 +1,5 @@
 require "bundler/setup"
+require "rails_helper"
 require "mission_kontrol_relay"
 
 RSpec.configure do |config|

@@ -1,6 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-describe MissionKontrolRelay do
+RSpec.describe MissionKontrolRelay do
   it "has a version number" do
     expect(MissionKontrolRelay::VERSION).not_to be nil
   end
