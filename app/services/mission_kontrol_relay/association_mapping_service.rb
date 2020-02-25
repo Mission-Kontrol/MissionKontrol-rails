@@ -31,10 +31,11 @@ module MissionKontrolRelay
       associations = []
 
       @model.reflections.each do |association|
+        association = association.last
         associations << {
-          associated_model: association.last.name,
-          foreign_key: association.last.try(:options)[:foreign_key],
-          type: association.last.macro
+          associated_model: association.name,
+          type: association.macro,
+          options: association.try(:options)
         }
       end
 
