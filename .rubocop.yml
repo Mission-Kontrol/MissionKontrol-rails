@@ -1,0 +1,25 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'test/dummy/db/**/*'
+    - 'config/**/*'
+    - 'test/dummy/config/**/*'
+    - 'script/**/*'
+    - 'test/dummy/script/**/*'
+    - 'bin/{rails,rake}'
+    - 'test/dummy/bin/*'
+    - 'test/test_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'mission_kontrol_relay.gemspec'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  IgnoredPatterns: ['(\A|\s)#']
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'

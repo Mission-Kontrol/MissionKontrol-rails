@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAssociations < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
@@ -11,7 +13,7 @@ class CreateAssociations < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_table(:companies_users, :id => false) do |t|
+    create_table(:companies_users, id: false) do |t|
       t.references :company
       t.references :user
     end

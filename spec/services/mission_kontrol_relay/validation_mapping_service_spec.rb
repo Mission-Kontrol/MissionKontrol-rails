@@ -20,14 +20,14 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
     context 'validation helpers' do
       context 'confirmation' do
         let(:model) { Patient }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:email],
             kind: :before,
             name: :validate,
             type: :confirmation
           }
-        }
+        end
 
         it 'returns the validation details' do
           confirmation_result = result.select { |validation| validation[:type] == :confirmation }.first
@@ -37,14 +37,14 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
 
       context 'exclusion' do
         let(:model) { Company }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:subdomain],
             kind: :before,
             name: :validate,
             type: :exclusion
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :exclusion }.first }
 
         it 'returns the validation details' do
@@ -52,20 +52,20 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
         end
 
         it 'returns the exclusion options in the key' do
-          expect(confirmation_result[:key].instance_variable_get(:@options)[:in]).to eq %w(www us ca jp)
+          expect(confirmation_result[:key].instance_variable_get(:@options)[:in]).to eq %w[www us ca jp]
         end
       end
 
       context 'format' do
         let(:model) { Part }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:legacy_code],
             kind: :before,
             name: :validate,
             type: :format
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :format }.first }
 
         it 'returns the validation details' do
@@ -73,20 +73,20 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
         end
 
         it 'returns the exclusion options in the key' do
-          expect(confirmation_result[:key].instance_variable_get(:@options)[:with]).to eq /\A[a-zA-Z]+\z/
+          expect(confirmation_result[:key].instance_variable_get(:@options)[:with]).to eq(/\A[a-zA-Z]+\z/)
         end
       end
 
       context 'inclusion' do
         let(:model) { Part }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:size],
             kind: :before,
             name: :validate,
             type: :inclusion
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :inclusion }.first }
 
         it 'returns the validation details' do
@@ -94,20 +94,20 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
         end
 
         it 'returns the exclusion options in the key' do
-          expect(confirmation_result[:key].instance_variable_get(:@options)[:in]).to eq %w(small medium large)
+          expect(confirmation_result[:key].instance_variable_get(:@options)[:in]).to eq %w[small medium large]
         end
       end
 
       context 'length' do
         let(:model) { User }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:name],
             kind: :before,
             name: :validate,
             type: :length
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :length }.first }
 
         it 'returns the validation details' do
@@ -121,14 +121,14 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
 
       context 'numericality' do
         let(:model) { Assembly }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:points],
             kind: :before,
             name: :validate,
             type: :numericality
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :numericality }.first }
 
         it 'returns the validation details' do
@@ -138,22 +138,22 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
 
       context 'presence' do
         let(:model) { Company }
-        
+
         it 'returns type presence' do
           expect(result.first[:type]).to eq :presence
-        end 
+        end
       end
 
       context 'uniqueness' do
         let(:model) { User }
-        let(:expected_result) {
+        let(:expected_result) do
           {
             attributes: [:name],
             kind: :before,
             name: :validate,
             type: :uniqueness
           }
-        }
+        end
         let(:confirmation_result) { result.select { |validation| validation[:type] == :uniqueness }.first }
 
         it 'returns the validation details' do
@@ -168,18 +168,17 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
 
     context 'custom validations' do
       let(:model) { Company }
-      let(:expected_result) {
-          {
-            attributes: nil,
-            kind: :before,
-            name: :validate,
-            type: nil,
-            key: :something
-          }
+      let(:expected_result) do
+        {
+          attributes: nil,
+          kind: :before,
+          name: :validate,
+          type: nil,
+          key: :something
         }
+      end
       let(:confirmation_result) { result.select { |validation| validation[:type].nil? }.first }
 
-        
       it 'returns the validation details' do
         expect(confirmation_result).to include expected_result
       end
@@ -187,19 +186,18 @@ RSpec.describe MissionKontrolRelay::ValidationMappingService do
 
     context 'conditional validations' do
       let(:model) { Company }
-      let(:expected_result) {
-          {
-            attributes: nil,
-            kind: :before,
-            name: :validate,
-            type: nil,
-            key: :something,
-            if: [:something_else?]
-          }
+      let(:expected_result) do
+        {
+          attributes: nil,
+          kind: :before,
+          name: :validate,
+          type: nil,
+          key: :something,
+          if: [:something_else?]
         }
+      end
       let(:confirmation_result) { result.select { |validation| validation[:type].nil? }.first }
 
-        
       it 'returns the validation details' do
         expect(confirmation_result).to include expected_result
       end

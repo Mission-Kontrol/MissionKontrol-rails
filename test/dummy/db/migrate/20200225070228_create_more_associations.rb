@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CreateMoreAssociations < ActiveRecord::Migration[5.2]
   def change
     create_table :authors do |t|
       t.string :name
       t.timestamps
     end
- 
+
     create_table :books do |t|
       t.belongs_to :author
       t.datetime :published_at
@@ -15,12 +17,12 @@ class CreateMoreAssociations < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
-  
+
     create_table :patients do |t|
       t.string :name
       t.timestamps
     end
-  
+
     create_table :appointments do |t|
       t.belongs_to :physician
       t.belongs_to :patient
@@ -32,13 +34,13 @@ class CreateMoreAssociations < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
- 
+
     create_table :accounts do |t|
       t.belongs_to :supplier
       t.string :account_number
       t.timestamps
     end
- 
+
     create_table :account_histories do |t|
       t.belongs_to :account
       t.integer :credit_rating
@@ -49,12 +51,12 @@ class CreateMoreAssociations < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
- 
+
     create_table :parts do |t|
       t.string :part_number
       t.timestamps
     end
- 
+
     create_table :assemblies_parts, id: false do |t|
       t.belongs_to :assembly
       t.belongs_to :part

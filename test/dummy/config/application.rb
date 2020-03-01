@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "mission_kontrol_relay"
+require 'mission_kontrol_relay'
 
 module Dummy
   class Application < Rails::Application
@@ -16,4 +18,3 @@ module Dummy
     config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
-
