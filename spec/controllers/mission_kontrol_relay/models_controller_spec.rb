@@ -4,7 +4,11 @@ RSpec.describe MissionKontrolRelay::ModelsController do
   routes { MissionKontrolRelay::Engine.routes }
 
   before do
-    ENV['API_TOKEN'] = 'valid'
+    ENV['MISSION_KONTROL_TOKEN'] = 'valid'
+  end
+
+  after do
+    ENV['MISSION_KONTROL_TOKEN'] = nil
   end
 
   describe '#validate_token' do

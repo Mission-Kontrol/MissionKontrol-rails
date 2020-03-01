@@ -24,7 +24,7 @@ module MissionKontrolRelay
     end
 
     def validate_token
-      token_matches = permitted_params[:token] == ENV['API_TOKEN']
+      token_matches = permitted_params[:token] == ENV['MISSION_KONTROL_TOKEN']
       message = if permitted_params[:token] && !token_matches
                   'Invalid token'
                 elsif permitted_params[:token].nil?

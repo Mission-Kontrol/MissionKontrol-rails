@@ -7,12 +7,12 @@ require 'mission_kontrol_relay/version'
 Gem::Specification.new do |spec|
   spec.name          = 'mission_kontrol_relay'
   spec.version       = MissionKontrolRelay::VERSION
-  spec.authors       = ['Camilla']
+  spec.authors       = ['Camilla van Klinken']
   spec.email         = ['camillavk@gmail.com']
 
-  spec.summary       = 'Write a short summary, because RubyGems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
-  spec.homepage      = 'https://kuwinda.io'
+  spec.summary       = 'Official Rails gem for MissionKontrol'
+  spec.description   = 'https://MissionKontrol.io is a simple and effective admin interface for your applications or microservices.'
+  spec.homepage      = 'https://github.com/Mission-Kontrol/MissionKontrol-rails'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

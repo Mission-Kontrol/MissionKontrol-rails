@@ -6,6 +6,7 @@ gemspec
 
 group :development, :test do
   gem 'byebug'
+  gem 'generator_spec'
   gem 'pry-rails'
   gem 'rake'
   gem 'rspec-rails', '3.8.2'
