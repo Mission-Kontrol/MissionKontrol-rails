@@ -1,6 +1,8 @@
 require "bundler/setup"
 require "rails_helper"
 require "mission_kontrol_relay"
+require 'simplecov'
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
