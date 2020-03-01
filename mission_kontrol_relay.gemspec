@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['camillavk@gmail.com']
 
   spec.summary       = 'Official Rails gem for MissionKontrol'
-  spec.description   = 'https://MissionKontrol.io is a simple and effective admin interface for your applications or microservices.'
+  spec.description   = 'MissionKontrol is a simple and effective admin interface for your applications or microservices. You can find out more at: https://MissionKontrol.io'
   spec.homepage      = 'https://github.com/Mission-Kontrol/MissionKontrol-rails'
   spec.license       = "GPL-3.0"
 

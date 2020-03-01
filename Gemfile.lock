@@ -179,7 +179,7 @@ DEPENDENCIES
   rspec-rails (= 3.8.2)
   rubocop
   simplecov
-  sqlite3
+  sqlite3 (~> 1.4)
 
 BUNDLED WITH
    1.17.3
