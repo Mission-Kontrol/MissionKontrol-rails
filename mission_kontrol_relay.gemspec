@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Official Rails gem for MissionKontrol'
   spec.description   = 'https://MissionKontrol.io is a simple and effective admin interface for your applications or microservices.'
   spec.homepage      = 'https://github.com/Mission-Kontrol/MissionKontrol-rails'
+  spec.license       = "GPL-3.0"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -24,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.17'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'sqlite3', '~> 1.4'
   spec.add_dependency 'rails', '~> 5.1'
 end
