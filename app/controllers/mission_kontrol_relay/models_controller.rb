@@ -2,6 +2,7 @@
 
 module MissionKontrolRelay
   class ModelsController < ApplicationController
+    before_action :validate_token
     before_action :available_models
 
     def associations
@@ -17,6 +18,23 @@ module MissionKontrolRelay
     end
 
     private
+
+    def permitted_params
+      params.permit(:token)
+    end
+
+    def validate_token
+      token_matches = permitted_params[:token] == ENV['API_TOKEN']
+      message = if permitted_params[:token] && !token_matches
+                  'Invalid token'
+                elsif permitted_params[:token].nil?
+                  'Please provide a token'
+                end
+
+      return if token_matches
+
+      render json: { error: message }, status: :unauthorized
+    end
 
     def available_models
       @available_models ||= MissionKontrolRelay::ModelRetrievalService.call
