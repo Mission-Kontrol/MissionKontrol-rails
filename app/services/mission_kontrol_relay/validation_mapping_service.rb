@@ -27,7 +27,7 @@ module MissionKontrolRelay
 
     def validation_attributes(validation)
       {
-        key: validation.instance_variable_get(:@key),
+        key: remove_klass_from_key(validation),
         type: validation.instance_variable_get(:@key).try(:kind),
         kind: validation.kind,
         name: validation.name,
@@ -35,6 +35,15 @@ module MissionKontrolRelay
         if: validation.instance_variable_get(:@if),
         unless: validation.instance_variable_get(:@unless)
       }
+    end
+
+    def remove_klass_from_key(validation)
+      key = validation.instance_variable_get(:@key)
+      if key.instance_variable_get(:@klass)
+        key.instance_variable_set(:@klass, nil)
+      end
+
+      key
     end
   end
 end

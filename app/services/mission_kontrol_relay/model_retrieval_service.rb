@@ -3,11 +3,11 @@
 module MissionKontrolRelay
   class ModelRetrievalService
     class << self
-      def build
+      def call
         Rails.application.eager_load!
-        ActiveRecord::Base.descendants.collect do |t|
-          t.to_s if valid_table?(t)
-        end .compact
+        ActiveRecord::Base.descendants.collect do |table|
+          table if valid_table?(table)
+        end.compact
       end
 
       private
