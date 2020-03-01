@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_070228) do
+ActiveRecord::Schema.define(version: 2020_02_29_112828) do
 
   create_table "account_histories", force: :cascade do |t|
     t.integer "account_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_070228) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "points"
   end
 
   create_table "assemblies_parts", id: false, force: :cascade do |t|
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_070228) do
     t.integer "owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "subdomain"
   end
 
   create_table "companies_users", id: false, force: :cascade do |t|
@@ -82,12 +84,15 @@ ActiveRecord::Schema.define(version: 2020_02_25_070228) do
     t.string "part_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "legacy_code"
+    t.string "size"
   end
 
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "physicians", force: :cascade do |t|

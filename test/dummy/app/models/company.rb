@@ -3,4 +3,6 @@ class Company < ActiveRecord::Base
 
   validates :owner, presence: true
   validate :something, if: :something_else?
+  validates :subdomain, exclusion: { in: %w(www us ca jp),
+    message: "%{value} is reserved." }
 end

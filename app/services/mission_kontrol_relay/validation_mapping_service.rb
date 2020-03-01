@@ -19,6 +19,7 @@ module MissionKontrolRelay
       @model._validate_callbacks.to_a.each do |validation|
         validations << {
           key: validation.instance_variable_get(:@key),
+          type: validation.instance_variable_get(:@key).try(:kind),
           kind: validation.kind,
           name: validation.name,
           attributes: validation.try(:filter).try(:attributes),
