@@ -5,10 +5,6 @@
 [![Gem Version](http://img.shields.io/gem/v/mission_kontrol_relay.svg?style=flat-square)](https://rubygems.org/gems/mission_kontrol_relay)
 [![License](http://img.shields.io/:license-gpl3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-3.0.html)
 
-## Registration
-
-Register for [MissionKontrol here](https://missionkontrol.io)
-
 ## Description
 
 [MissionKontrol](https://missionkontrol.io) is a simple and effective admin interface for your applications or microservices. It is a self hosted application that is quick and easy to set up, even if you aren't a developer. MissionKontrol doesn't need to know anything about your application(s) in order to work, it just needs to connect to your database(s).
