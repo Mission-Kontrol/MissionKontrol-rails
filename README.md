@@ -11,9 +11,10 @@
 
 It is a self hosted application that is quick and easy to set up, even if you aren't a developer. MissionKontrol doesn't need to know anything about your application(s) in order to work, it just needs to connect to your database(s).
 
-**MisisonKontrolRelay** is a gem that gives your version of MissionKontrol more power and better features by providing it with more information about your application (such as model associations and validations).
+## MisisonKontrolRelay
+This gem that gives your version of MissionKontrol more power and better features by providing it with more information about your application (such as model associations and validations).
 
-Don't worry though, with the access token generated on install, only your hosted version of MissionKontrol will get access to this information.
+Using the access token generated on install, only your hosted version of MissionKontrol will get access to this information.
 
 #### Do I have to be using MissionKontrol in order to use this gem?
 
