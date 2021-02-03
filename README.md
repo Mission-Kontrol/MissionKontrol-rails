@@ -7,7 +7,9 @@
 
 ## Description
 
-[MissionKontrol](https://missionkontrol.io) is a simple and effective admin interface for your applications or microservices. It is a self hosted application that is quick and easy to set up, even if you aren't a developer. MissionKontrol doesn't need to know anything about your application(s) in order to work, it just needs to connect to your database(s).
+[MissionKontrol](https://missionkontrol.io) is a simple and effective admin interface for your applications or microservices. Unlike gems like active admin or rails admin, there's no significant coding needed to get started.
+
+It is a self hosted application that is quick and easy to set up, even if you aren't a developer. MissionKontrol doesn't need to know anything about your application(s) in order to work, it just needs to connect to your database(s).
 
 **MisisonKontrolRelay** is a gem that gives your version of MissionKontrol more power and better features by providing it with more information about your application (such as model associations and validations).
 
